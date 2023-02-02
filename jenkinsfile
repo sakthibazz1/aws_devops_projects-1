@@ -1,10 +1,16 @@
 pipeline {
     agent any
-
+environment{
+PATH = "/opt/maven3/bin:$PATH"
+}
     stages {
         stage("Git Checkout") {
             steps {
                 git 'https://github.com/ChethanGowda6464/aws_devops_projects.git'
+            }
+            stage("Maven Builds") {
+            steps {
+                sh "mvn clean package"
             }
         }
     }
