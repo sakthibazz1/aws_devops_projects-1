@@ -4,7 +4,7 @@ pipeline
     
     stages
     {
-        stage("Git Checkout") 
+        stage("Git Clone") 
         {
             steps {
                 git 'https://github.com/ChethanGowda6464/aws_devops_projects.git'
@@ -12,8 +12,13 @@ pipeline
          }
             stage("Maven Builds")
             {
-            steps {
+            steps {              
                 sh "mvn validate"
+                sh "mvn clean"
+                sh "mvn compile"
+                sh "mvn test -compiple"
+                sh "mvn test"
+                sh "mvn install"
                   }
             }
     }
