@@ -16,7 +16,7 @@ pipeline
                 sh "mvn validate"
                 sh "mvn clean"
                 sh "mvn compile"
-                sh "test -compile"
+                sh "mvn test -compile"
                 sh "mvn test"
                 sh "mvn install"
                   }
