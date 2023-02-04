@@ -4,9 +4,9 @@
          http://maven.apache.org/xsd/maven-4.0.0.xsd">  
   
   <modelVersion>4.0.0</modelVersion>  
-  <groupId>DemoMavenProject</groupId>  
-  <artifactId>Calci_Application</artifactId>  
-  <version>1.0.1</version>  
+  <groupId>Crispy Kitchen - Bootstrap 5 HTML Template</groupId>  
+  <artifactId>Crispy Kitchen - Bootstrap 5 HTML Template</artifactId>  
+  <version>1.1.1</version>  
  
 <dependencies>
      <dependency>
