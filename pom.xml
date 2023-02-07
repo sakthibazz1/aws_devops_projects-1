@@ -5,8 +5,8 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>SampleTest1</groupId>
-  <artifactId>SampleTest1</artifactId>
-  <version>1.0.0</version>
+  <artifactId>demoapp</artifactId>
+  <version>1.1.1</version>
   <packaging>war</packaging>
   <build>
     <sourceDirectory>SampleTest1</sourceDirectory>
