@@ -17,7 +17,7 @@ pipeline
                 sh "mvn compile"
                 sh "mvn test"
                 sh "mvn install"
-                sh "mv webapp/target/*.war webapp/target/myweb.war"
+                sh "mv target/*.war target/myweb.war"
                   }
            }
             stage ("deploy-dev")
