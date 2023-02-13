@@ -10,7 +10,6 @@ pipeline
         stage("Git Clone") 
         {
             steps {
-                git init
                 git 'https://github.com/ChethanGowda6464/aws_devops_projects.git'
                   }
          }
