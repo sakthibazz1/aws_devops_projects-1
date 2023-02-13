@@ -18,6 +18,7 @@ pipeline
                 sh "mvn test"
                 sh "mvn install"
                 sh "mv target/*.war target/myweb.war"
+                sh "chmod -R 755 target"
                   }
            }
             stage ("deploy-dev")
