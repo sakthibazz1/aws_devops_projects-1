@@ -23,14 +23,14 @@ pipeline
             stage ("deploy-dev")
           {
             steps{
-             sshagent(['sakthi'])
+            sshagent(['ubuntu']) 
              {
            sh """
-           scp -o StrictHostKeyChecking=no target/myweb.war ec2-user@172.31.48.113:/usr/local/apache-tomcat-8.5.85/webapps/
+           scp -o StrictHostKeyChecking=no target/myweb.war ubuntu@172.31.48.130:/opt/tomcat/webapps/
            
-           ssh ec2-user@172.31.48.113 /usr/local/apache-tomcat-8.5.85/bin/shutdown.sh
+           ssh ubuntu@172.31.48.130 /opt/tomcat/bin/shutdown.sh
 
-           ssh ec2-user@172.31.48.113 /usr/local/apache-tomcat-8.5.85/bin/startup.sh
+           ssh ubuntu@172.31.48.130 /opt/tomcat/bin/startup.sh
       
               """       
             }
