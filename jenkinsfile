@@ -25,18 +25,34 @@ pipeline
             steps{
             sshagent(['ubuntu']) 
              {
-           sh """
-           scp -o StrictHostKeyChecking=no target/myweb.war ubuntu@172.31.48.130:/opt/tomcat/webapps/
+              sh """
+              scp -o StrictHostKeyChecking=no target/myweb.war ubuntu@172.31.48.130:/opt/tomcat/webapps/
            
-           ssh ubuntu@172.31.48.130 /opt/tomcat/bin/shutdown.sh
+              ssh ubuntu@172.31.48.130 /opt/tomcat/bin/shutdown.sh
 
-           ssh ubuntu@172.31.48.130 /opt/tomcat/bin/startup.sh
+              ssh ubuntu@172.31.48.130 /opt/tomcat/bin/startup.sh
       
               """       
-            }
+              }\
             
-              }
+            }
          }
+         stage('Upload Artifacts to Artifactory') {
+          steps {
+            artifactoryUpload(
+              serverId: 'Artifactory',
+              spec: """{
+                "files": [
+                  {
+                    "pattern": "target/*.war",
+                    "target": "Artifactory/"
+                  }
+                ]
+              }"""
+            )
+          }
+        }
+
               
     }
 }
