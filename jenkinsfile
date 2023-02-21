@@ -40,7 +40,7 @@ pipeline
          stage('Upload Artifacts to Artifactory') {
           steps {
             rtUpload (
-                serverId: 'Artifactory-1',
+                serverId: 'Artifactory',
                 spec: '''{
                   "files": [
                     {
