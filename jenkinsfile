@@ -40,7 +40,7 @@ pipeline
          stage('Upload Artifacts to Artifactory') {
           steps {
             artifactoryUpload(
-              server: 'Artifactory',
+              def server = Artifactory.server('My-Artifactory-Server-ID')
               spec: """{
                 "files": [
                   {
