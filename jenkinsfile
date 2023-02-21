@@ -33,7 +33,7 @@ pipeline
               ssh ubuntu@172.31.48.130 /opt/tomcat/bin/startup.sh
       
               """       
-              }\
+              }
             
             }
          }
