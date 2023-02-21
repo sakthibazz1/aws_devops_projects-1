@@ -20,8 +20,8 @@ pipeline
                 sh "mv target/*.war target/myweb.war"
                   }
            }
-            stage ("deploy-dev")
-          {
+            stage ("deploy-to-tomcat")
+            {
             steps{
             sshagent(['ubuntu']) 
              {
@@ -36,7 +36,7 @@ pipeline
               }
             
             }
-         }
+            }
          stage('Upload Artifacts to Artifactory') {
           steps {
             rtUpload (
