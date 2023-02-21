@@ -39,17 +39,16 @@ pipeline
          }
          stage('Upload Artifacts to Artifactory') {
           steps {
-            artifactoryUpload(
-              def server = Artifactory.server('My-Artifactory-Server-ID')
-              spec: """{
-                "files": [
-                  {
-                    "pattern": "target/*.war",
-                    "target": "Artifactory/"
-                  }
-                ]
-              }"""
-            )
+            def uploadSpec = """{
+            "files": [
+              {
+              "pattern": "target/myweb.war",
+              "target": "Artifactory/"
+              }
+            ]
+            }"""
+            server.upload spec: uploadSpec
+            
           }
         }
 
