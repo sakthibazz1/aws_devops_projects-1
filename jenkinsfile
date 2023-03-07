@@ -9,7 +9,7 @@ pipeline
                 git 'https://github.com/sakthibazz1/aws_devops_projects-1.git'
                   }
          }
-            stage("Maven Builds1")
+            stage("Maven Builds")
             {
             steps {
                 sh "mvn validate"            
